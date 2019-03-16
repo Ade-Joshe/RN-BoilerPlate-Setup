@@ -2,19 +2,17 @@ import * as React from 'react';
 import { Appbar } from 'react-native-paper';
 
 export default class Header extends React.Component {
-      _goBack = () => console.warn('Went back');
-
-      _onSearch = () => console.warn('Searching');
-
-      _onMore = () => console.warn('Shown more');
 
     render() {
         return (
             <Appbar.Header>
-                {/* <Appbar.BackAction onPress={this._goBack} /> */}
-                <Appbar.Content title="Title" subtitle="Subtitle" />
-                <Appbar.Action icon="search" onPress={this._onSearch} />
-                <Appbar.Action icon="more-vert" onPress={this._onMore} />
+                <Appbar.Content title={this.props.title} subtitle={this.props.subtitle ? this.props.subtitle : null} />
+                {
+                  this.props.icons &&
+                  this.props.icons.map(icon =>
+                    <Appbar.Action icon={icon.name}  />
+                    )
+                }
             </Appbar.Header>
         );
     }

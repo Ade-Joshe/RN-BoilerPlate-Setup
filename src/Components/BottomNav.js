@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BottomNavigation } from 'react-native-paper';
+import Header from '../Components/Header';
 
 
 export default class BottomNav extends React.Component {
@@ -14,11 +15,18 @@ export default class BottomNav extends React.Component {
 
     render() {
         return (
-            <BottomNavigation
-                navigationState={this.state}
-                onIndexChange={this._handleIndexChange}
-                renderScene={this._renderScene}
-            />
+            <React.Fragment>
+                <Header
+                    title={this.state.routes[this.state.index].title}
+                    subtitle={this.state.routes[this.state.index].subtitle}
+                    icons={this.state.routes[this.state.index].icons}
+                />
+                <BottomNavigation
+                    navigationState={this.state}
+                    onIndexChange={this._handleIndexChange}
+                    renderScene={this._renderScene}
+                />
+            </React.Fragment>
         );
     }
 }

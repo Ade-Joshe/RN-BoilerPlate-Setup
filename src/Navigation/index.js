@@ -4,7 +4,7 @@ import BottomNav from '../Components/BottomNav';
 
 const Navigation = () => {
     let routes = [
-        { key: 'music', title: 'Music', icon: 'queue-music', subtitle:'Sweet Words' },
+        { key: 'music', title: 'Music', icon: 'queue-music', subtitle:'Sweet Words', icons: [{name: 'search'},{name:'more-vert'}]}, //icons must be an array
         { key: 'albums', title: 'Albums', icon: 'album' },
         { key: 'recents', title: 'Recents', icon: 'history' },
     ];
