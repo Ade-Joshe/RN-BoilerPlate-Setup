@@ -8,7 +8,6 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, View, Text } from 'react-native';
-import Header from './src/Components/Header';
 import Icons from './src/Components/Icon';
 import BannerImg from './src/Components/Banner';
 import Cards from './src/Components/Card';
@@ -25,7 +24,6 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header />
         <Navigation />
       </View>
     );
